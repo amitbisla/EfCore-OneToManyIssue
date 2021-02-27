@@ -5,6 +5,10 @@ namespace EfCore.Data
 {
     public class EfCoreContext : DbContext
     {
+        public EfCoreContext()
+        {
+            ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking; 
+        }
 
         public DbSet<Scenario> Scenarios { get; set; }
         public DbSet<Detail> Details { get; set; }
